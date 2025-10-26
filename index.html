@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBER DEFENSE: Situs Web Palsu & Penipuan</title>
+    <!-- Muat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk tema gelap dan warna elegan (Teal & Deep Blue) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "cyber-teal": "#2DD4BF", // Teal-400: Accent modern
+              "dark-bg": "#0D1117", // Darker, smoother background
+              "secure-blue": "#3B82F6", // Blue-500: Primary secure color
+              "danger-red": "#EF4444", // Red-500: Alert color
+              "light-gray": "#E5E7EB", // Text color
+              "mid-gray": "#A0AEC0", // Secondary text
+            },
+            fontFamily: {
+              // Menggunakan font monospace bersih untuk nuansa terminal
+              mono: ["Consolas", "Monospace", "Inter"],
+              sans: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              // Glow yang lebih halus
+              "soft-glow": "0 0 15px rgba(45, 212, 191, 0.3)",
+              "danger-glow": "0 0 15px rgba(239, 68, 68, 0.3)",
+              "panel-shadow": "0 4px 15px rgba(0, 0, 0, 0.4)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* CSS Tambahan untuk efek terminal/hacking yang elegan */
+      body {
+        background-color: #0d1117; /* dark-bg */
+        color: #e5e7eb; /* Light gray text for high contrast */
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+        /* Pola latar belakang yang lebih halus */
+        background-image: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 50px 50px;
+      }
+
+      .terminal-text {
+        color: #2dd4bf; /* cyber-teal */
+      }
+
+      .data-packet {
+        width: 18px;
+        height: 18px;
+        background-color: #2dd4bf; /* cyber-teal */
+        box-shadow: 0 0 8px #2dd4bf;
+        position: absolute;
+        transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Kurva animasi yang lebih mulus */
+        border-radius: 4px;
+        opacity: 0;
+      }
+
+      .server-icon {
+        filter: drop-shadow(0 0 6px #3b82f6); /* secure-blue */
+      }
+
+      .scam-server-icon {
+        filter: drop-shadow(0 0 6px #ef4444); /* danger-red */
+      }
+
+      /* Animasi Glitch pada error */
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+          opacity: 1;
+        }
+        20% {
+          transform: translate(-2px, 2px);
+          opacity: 0.8;
+        }
+        40% {
+          transform: translate(-2px, -2px);
+          opacity: 0.8;
+        }
+        60% {
+          transform: translate(2px, 2px);
+          opacity: 0.8;
+        }
+        80% {
+          transform: translate(2px, -2px);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
+      .glitch-text {
+        animation: glitch 0.3s infinite alternate;
+      }
+
+      /* NEW: Animasi sederhana untuk ikon */
+      @keyframes pulse-icon {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+      }
+      .animated-icon {
+        animation: pulse-icon 2s infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen p-4 sm:p-8">
+    <!-- Header / Judul Utama -->
+    <header class="text-center mb-16">
+      <h1
+        class="text-3xl sm:text-5xl font-bold terminal-text border-b-4 border-secure-blue pb-4 inline-block tracking-wide"
+      >
+        <span class="text-secure-blue text-4xl sm:text-6xl mr-2">🔒</span>
+        <span class="text-light-gray">CYBER DEFENSE</span>
+      </h1>
+      <p class="mt-4 text-base text-mid-gray">
+        STATUS: ONLINE | INITIATING SECURITY PROTOCOLS...
+      </p>
+    </header>
+
+    <!-- Bagian Penjelasan (LAYOUT MIRIP CONTOH) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <!-- Bagian Pembuka: Apa itu Scam -->
+      <div
+        class="bg-gray-800 p-8 rounded-xl shadow-panel-shadow border border-secure-blue mb-12"
+      >
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="text-cyber-teal text-sm font-semibold uppercase"
+              >Ancaman Digital</span
+            >
+            <h2 class="text-4xl font-bold text-light-gray mt-2 leading-tight">
+              Melindungi Diri dari
+              <span class="text-danger-red">Situs Web Palsu</span> & Penipuan
+              Online
+            </h2>
+            <p class="mt-4 text-mid-gray leading-relaxed">
+              Di era digital ini, situs web palsu dan skema penipuan online
+              semakin canggih. Mereka dirancang untuk meniru platform yang Anda
+              percaya, dengan tujuan utama mencuri informasi pribadi dan
+              finansial Anda.
+            </p>
+            <p class="mt-2 text-mid-gray leading-relaxed">
+              Memahami bagaimana penipuan ini bekerja dan mengenali
+              tanda-tandanya adalah langkah pertama yang krusial dalam
+              melindungi jejak digital Anda.
+            </p>
+          </div>
+          <!-- Gambar/Placeholder (Bisa diganti dengan ilustrasi keamanan) -->
+          <div>
+            <div
+              class="bg-gray-900 rounded-lg p-6 flex justify-center items-center h-64 border border-gray-700"
+            >
+              <span class="text-7xl text-secure-blue animated-icon">🛡️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian Detail: Metode Kerja & Mekanisme Pencurian -->
+      <div class="grid lg:grid-cols-3 gap-8 mb-12">
+        <!-- Kolom 1: Metode Kerja Penipuan -->
+        <div
+          class="bg-gray-800 p-6 rounded-xl shadow-panel-shadow border border-gray-700 hover:border-cyber-teal transition-all duration-300 transform hover:scale-[1.02] hover:shadow-soft-glow"
+        >
+          <div class="text-5xl text-cyber-teal mb-4 font-mono">/01</div>
+          <h3
+            class="text-2xl font-bold text-light-gray mb-4 border-b border-gray-700 pb-2"
+          >
+            Metode Penipu
+            <span class="text-sm text-mid-gray">(Taktik Serangan)</span>
+          </h3>
+          <p class="text-mid-gray leading-snug mb-4 text-sm">
+            Taktik umum yang digunakan penyerang untuk memancing korban:
+          </p>
+          <ul class="list-none space-y-5">
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-secure-blue hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-secure-blue mr-2 text-xl">📧</span> Phishing
+                Bait</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Email/SMS palsu, janji hadiah, atau peringatan keamanan
+                mendesak.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-secure-blue hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-secure-blue mr-2 text-xl">🔍</span> Search
+                Poisoning</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Iklan berbahaya yang muncul di hasil teratas mesin pencari.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-secure-blue hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-secure-blue mr-2 text-xl">⌨️</span>
+                Typo-Squatting</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Menggunakan domain dengan ejaan yang sangat mirip (misalnya:
+                `gooogle.com`).
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 2: Mekanisme Pencurian Data -->
+        <div
+          class="bg-gray-800 p-6 rounded-xl shadow-panel-shadow border-2 border-danger-red/50 hover:border-danger-red transition-all duration-300 transform hover:scale-[1.02] hover:shadow-danger-glow"
+        >
+          <div class="text-5xl text-danger-red mb-4 font-mono">/02</div>
+          <h3
+            class="text-2xl font-bold text-light-gray mb-4 border-b border-danger-red pb-2"
+          >
+            Mekanisme Pencurian Data
+            <span class="text-sm text-mid-gray">(Ancaman Langsung)</span>
+          </h3>
+          <p class="text-mid-gray leading-snug mb-4 text-sm">
+            Bagaimana data sensitif Anda disadap setelah Anda klik tautan palsu:
+          </p>
+          <ul class="list-none space-y-5">
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-danger-red animate-pulse hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-danger-red mr-2 text-xl">🚨</span> Credential
+                Logging</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Kombinasi sandi/email Anda langsung direkam dan dikirim ke
+                penipu.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-danger-red hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-danger-red mr-2 text-xl">🔄</span> Quick
+                Redirect</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Dialihkan ke situs asli setelah pencurian agar korban tidak
+                curiga.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-danger-red hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-danger-red mr-2 text-xl">🚫</span> Identity
+                Theft Risk</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Data yang dicuri digunakan untuk transaksi ilegal atau
+                penyalahgunaan identitas.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Indikator Kritis -->
+        <div
+          class="bg-gray-800 p-6 rounded-xl shadow-panel-shadow border border-gray-700 hover:border-secure-blue transition-all duration-300 transform hover:scale-[1.02] hover:shadow-soft-glow"
+        >
+          <div class="text-5xl text-secure-blue mb-4 font-mono">/03</div>
+          <h3
+            class="text-2xl font-bold text-light-gray mb-4 border-b border-secure-blue pb-2"
+          >
+            Indikator Kritis Keamanan
+            <span class="text-sm text-mid-gray">(Pengecekan Wajib)</span>
+          </h3>
+          <p class="text-mid-gray leading-snug mb-4 text-sm">
+            Langkah pertahanan diri paling efektif untuk verifikasi situs:
+          </p>
+          <ul class="list-none space-y-5">
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-cyber-teal hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-cyber-teal mr-2 text-xl">🌐</span> URL
+                Inspection</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Verifikasi setiap karakter di alamat web dan domain.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-cyber-teal hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-cyber-teal mr-2 text-xl">🔒</span> HTTPS/SSL
+                Check</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Cari ikon gembok dan pastikan protokolnya `https://`.
+              </p>
+            </li>
+            <li
+              class="p-3 bg-gray-900 rounded-lg border-l-4 border-cyber-teal hover:bg-gray-700/50 transition duration-200"
+            >
+              <strong class="text-light-gray flex items-center"
+                ><span class="text-cyber-teal mr-2 text-xl">📐</span> Design
+                Quality</strong
+              >
+              <p class="text-gray-400 text-sm mt-1">
+                Waspadai kesalahan tata bahasa, resolusi gambar yang buruk, atau
+                desain kuno.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Simulasi Gerak -->
+    <section
+      class="max-w-6xl mx-auto p-8 bg-gray-900 bg-opacity-90 rounded-xl border border-secure-blue shadow-soft-glow mb-16"
+    >
+      <h2 class="text-3xl font-bold mb-8 text-secure-blue text-center">
+        SIMULASI AKSES DATA INTERAKTIF
+      </h2>
+
+      <!-- Area Visualisasi -->
+      <div
+        id="simulation-area"
+        class="relative h-72 border border-dashed border-gray-700 p-6 rounded-lg flex items-center bg-gray-800"
+      >
+        <!-- Posisi Klien/User -->
+        <!-- Ukuran ikon: text-3xl di mobile, text-5xl di sm dan ke atas -->
+        <div
+          id="client"
+          class="text-center absolute left-[10%] transform -translate-x-1/2"
+        >
+          <div class="text-3xl sm:text-5xl">👤</div>
+          <!-- PERUBAHAN: Teks label diubah menjadi text-xs di mobile -->
+          <p class="text-xs sm:text-sm text-cyber-teal mt-2">
+            [CLIENT: USER_HOST]
+          </p>
+        </div>
+
+        <!-- Paket Data (akan digerakkan oleh JS) -->
+        <div id="data-packet" class="data-packet"></div>
+
+        <!-- Posisi Server Resmi -->
+        <!-- Ukuran ikon: text-5xl di mobile, text-7xl di sm dan ke atas -->
+        <div
+          id="legit-server"
+          class="text-center absolute left-[50%] transform -translate-x-1/2"
+        >
+          <div class="text-5xl sm:text-7xl server-icon">🌐</div>
+          <!-- PERUBAHAN: Teks label diubah menjadi text-xs di mobile -->
+          <p class="text-xs sm:text-sm text-secure-blue mt-2">
+            [SERVER: SECURE_HOST]
+          </p>
+        </div>
+
+        <!-- Posisi Server Scam -->
+        <!-- Ukuran ikon: text-5xl di mobile, text-7xl di sm dan ke atas -->
+        <div
+          id="scam-server"
+          class="text-center absolute left-[85%] transform -translate-x-1/2"
+        >
+          <div class="text-5xl sm:text-7xl scam-server-icon">❌</div>
+          <!-- PERUBAHAN: Teks label diubah menjadi text-xs di mobile -->
+          <p class="text-xs sm:text-sm text-danger-red mt-2">
+            [SERVER: SCAM_TRAP]
+          </p>
+        </div>
+      </div>
+
+      <!-- Output Terminal (Log) -->
+      <div class="mt-8">
+        <h3 class="text-xl font-bold mb-4 text-cyber-teal">LOG SISTEM:</h3>
+        <div
+          id="log-output"
+          class="h-32 bg-gray-800 border border-gray-700 p-4 overflow-y-auto text-sm text-gray-400 font-mono rounded-md"
+        >
+          &gt; SYSTEM READY. SILAKAN PILIH JENIS AKSES DI BAWAH.
+        </div>
+      </div>
+
+      <!-- Tombol Aksi (Responsif: Vertikal di mobile, Horizontal di md) -->
+      <div
+        class="flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0 justify-center mt-10"
+      >
+        <button
+          id="legit-button"
+          class="px-8 py-4 bg-secure-blue text-white font-bold text-lg rounded-full transition duration-300 hover:bg-secure-blue/80 focus:outline-none focus:ring-4 focus:ring-secure-blue focus:ring-opacity-50 shadow-lg flex items-center justify-center"
+        >
+          <span class="mr-3">✅</span> AKSES RESMI (AMAN)
+        </button>
+        <button
+          id="scam-button"
+          class="px-8 py-4 bg-danger-red text-white font-bold text-lg rounded-full transition duration-300 hover:bg-danger-red/80 focus:outline-none focus:ring-4 focus:ring-danger-red focus:ring-opacity-50 shadow-lg flex items-center justify-center"
+        >
+          <span class="mr-3">⚠️</span> AKSES PALSU (BAHAYA!)
+        </button>
+      </div>
+
+      <!-- Modal Pesan -->
+      <div
+        id="modal-message"
+        class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center p-4 z-50"
+      >
+        <div
+          id="modal-content"
+          class="bg-gray-900 p-10 rounded-xl max-w-lg w-full border-4 border-danger-red shadow-danger-glow text-center"
+        >
+          <!-- Isi modal akan diisi oleh JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Script Logika Simulasi -->
+    <script>
+      const packet = document.getElementById("data-packet");
+      const logOutput = document.getElementById("log-output");
+      const legitButton = document.getElementById("legit-button");
+      const scamButton = document.getElementById("scam-button");
+      const legitServer = document.getElementById("legit-server");
+      const scamServer = document.getElementById("scam-server");
+      const client = document.getElementById("client");
+      const modalMessage = document.getElementById("modal-message");
+      const modalContent = document.getElementById("modal-content");
+
+      // Warna Hex baru dari Tailwind Config:
+      const CYBER_TEAL = "#2DD4BF";
+      const SECURE_BLUE = "#3B82F6";
+      const DANGER_RED = "#EF4444";
+
+      // Konstanta posisi
+      const simArea = document.getElementById("simulation-area");
+
+      // Posisi Awal (Klien)
+      let startX, startY;
+
+      function updatePositions() {
+        // Fungsi ini dipanggil saat loading dan resize untuk mengatur ulang posisi paket data.
+        const clientRect = client.getBoundingClientRect();
+        const simRect = simArea.getBoundingClientRect();
+
+        // Posisi Y di tengah area simulasi
+        startY = simRect.height / 2 - packet.offsetHeight / 2;
+
+        // Posisi X client.offsetLeft sudah memperhitungkan transform -translate-x-1/2 dari left-[10%]
+        packet.style.top = `${startY}px`;
+        // Set posisi awal paket data tepat di tengah-tengah ikon client
+        packet.style.left = `${client.offsetLeft}px`;
+      }
+
+      // Fungsi Logging ke Terminal
+      function log(message, type = "info") {
+        const time = new Date().toLocaleTimeString("id-ID");
+        let color = "text-gray-400";
+        if (type === "success") color = "text-cyber-teal";
+        if (type === "error") color = "text-danger-red";
+        if (type === "warning") color = "text-yellow-500";
+
+        const entry = document.createElement("p");
+        // Menggunakan kelas Tailwind untuk warna
+        entry.className = `${color} mt-1 font-mono`;
+        entry.innerHTML = `&gt; [${time}] ${message}`;
+        logOutput.appendChild(entry);
+        logOutput.scrollTop = logOutput.scrollHeight; // Auto-scroll
+      }
+
+      // Fungsi Reset Paket
+      function resetPacket() {
+        updatePositions();
+        packet.style.opacity = "0";
+        packet.style.transition = "none";
+        packet.style.transform = "translate(0, 0)";
+        packet.style.backgroundColor = CYBER_TEAL;
+        packet.style.boxShadow = `0 0 8px ${CYBER_TEAL}`;
+        void packet.offsetWidth;
+        packet.style.transition =
+          "all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+      }
+
+      // Fungsi Tampilkan Modal
+      function showModal(title, message, isError = false) {
+        modalContent.innerHTML = `
+                <h3 class="text-3xl font-bold mb-4 ${
+                  isError ? "text-danger-red glitch-text" : "text-cyber-teal"
+                }">${title}</h3>
+                <p class="text-lg text-gray-300">${message}</p>
+                <button onclick="closeModal()" class="mt-6 px-4 py-2 bg-secure-blue text-white rounded hover:bg-secure-blue/80 transition">Tutup [ACK]</button>
+            `;
+        // Menyesuaikan border modal berdasarkan status
+        modalContent.classList.remove(
+          "border-danger-red",
+          "border-secure-blue",
+          "shadow-danger-glow",
+          "shadow-soft-glow"
+        );
+        if (isError) {
+          modalContent.classList.add("border-danger-red", "shadow-danger-glow");
+        } else {
+          modalContent.classList.add("border-secure-blue", "shadow-soft-glow");
+        }
+        modalMessage.style.display = "flex";
+      }
+
+      // Fungsi Tutup Modal
+      window.closeModal = function () {
+        modalMessage.style.display = "none";
+      };
+
+      // Handler Simulasi
+      function runSimulation(isScam) {
+        legitButton.disabled = true;
+        scamButton.disabled = true;
+        log("MENGIRIM PERMINTAAN DATA...");
+
+        resetPacket();
+
+        const target = isScam ? scamServer : legitServer;
+
+        // Hitung perpindahan X: Jarak dari posisi awal paket (client.offsetLeft) ke posisi target (target.offsetLeft)
+        const moveX = target.offsetLeft - client.offsetLeft;
+
+        // Tampilkan paket
+        packet.style.opacity = "1";
+
+        // Tahap 1: Kirim Paket
+        setTimeout(() => {
+          packet.style.transform = `translateX(${moveX}px)`;
+
+          // Setelah paket mencapai tujuan
+          setTimeout(() => {
+            if (isScam) {
+              // Scam Logic
+              log("CONNECTION FAILED: Terdeteksi URL Mencurigakan!", "error");
+              packet.style.backgroundColor = DANGER_RED;
+              packet.style.boxShadow = `0 0 10px ${DANGER_RED}`;
+
+              setTimeout(() => {
+                // Simulasi Data Theft
+                log("WARNING: DATA BREACH INITIATED...", "error");
+                showModal(
+                  "!!! DATA BREACH ALERT !!!",
+                  "Informasi Kredensial Anda TELAH DICURI. Situs ini adalah jebakan Penipuan. Data Anda telah terekam di server penipu.",
+                  true
+                );
+
+                // Reset setelah notifikasi
+                setTimeout(() => {
+                  resetPacket();
+                  legitButton.disabled = false;
+                  scamButton.disabled = false;
+                }, 1000);
+              }, 500);
+            } else {
+              // Legit Logic
+              log("CONNECTION SUCCESS: Server Resmi Merespons.", "success");
+              packet.style.backgroundColor = SECURE_BLUE;
+              packet.style.boxShadow = `0 0 10px ${SECURE_BLUE}`;
+
+              // Tahap 2: Paket kembali
+              setTimeout(() => {
+                // Pindah kembali ke posisi 0 (klien)
+                packet.style.transform = `translateX(0px)`;
+                log("DATA DITERIMA. KONEKSI AMAN DAN TERENKRIPSI.", "success");
+
+                // Reset setelah paket kembali
+                setTimeout(() => {
+                  resetPacket();
+                  legitButton.disabled = false;
+                  scamButton.disabled = false;
+                }, 1500);
+              }, 500);
+            }
+          }, 1200); // Waktu tempuh (sama dengan transisi)
+        }, 50);
+      }
+
+      legitButton.addEventListener("click", () => runSimulation(false));
+      scamButton.addEventListener("click", () => runSimulation(true));
+
+      // Inisialisasi posisi awal saat window dimuat dan saat di resize
+      window.onload = updatePositions;
+      window.onresize = updatePositions;
+
+      log("INITIATION COMPLETE. MODULE ONLINE.");
+    </script>
+  </body>
+</html>
